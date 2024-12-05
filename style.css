@@ -1,0 +1,140 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+/* Background */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+/* Card */
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+/* Balloons */
+.balloons {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+}
+
+.balloon {
+    width: 80px;
+    height: 100px;
+    position: absolute;
+    bottom: -150px;
+    animation: float 8s infinite;
+}
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 2px;
+    height: 150px;
+    background: white;
+}
+
+.balloon.red { background: radial-gradient(circle, #ff4e50, #ff0000); left: 10%; animation-delay: 1s; }
+.balloon.blue { background: radial-gradient(circle, #4e50ff, #0000ff); left: 30%; animation-delay: 2s; }
+.balloon.yellow { background: radial-gradient(circle, #faff7f, #ffff00); left: 50%; animation-delay: 3s; }
+.balloon.green { background: radial-gradient(circle, #7fff7f, #00ff00); left: 70%; animation-delay: 4s; }
+.balloon.purple { background: radial-gradient(circle, #d27fff, #8000ff); left: 90%; animation-delay: 5s; }
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-60vh) rotate(20deg); }
+    100% { transform: translateY(0) rotate(-20deg); }
+}
+
+/* Wishes Section */
+.wish-section {
+    margin: 40px auto;
+    width: 60%;
+}
+
+.wish-section textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    resize: none;
+}
+
+.wish-section button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #ff4e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.wish-section button:hover {
+    background: #ff0000;
+}
+
+.wish-section .wishes {
+    margin-top: 20px;
+    text-align: left;
+}
